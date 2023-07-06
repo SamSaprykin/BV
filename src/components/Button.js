@@ -1,30 +1,66 @@
 import React from "react";
-import { ThemeToggler } from "gatsby-plugin-dark-mode";
 import { Link } from "gatsby";
 import IconsLibrary from "./bvIcons";
 
-const Button = () => {
-  return (
-    <div className="fixed top-0 flex justify-between items-center px-10 pt-10 w-full z-10">
-      <Link to="/">
-        <IconsLibrary type="main-logo" />
-      </Link>
+function getClassnameByType(variant, classNameAdditional) {
+  const classMappings = {
+    primary: `bg-[#40e640] rounded-[100px] px-[19px] py-[12px] text-black text-xl leading-6 relative ${classNameAdditional}`,
+    outline: `bg-transparent rounded-[100px] px-[19px] py-[10px] text-white border-white border-2 box-content text-xl leading-6 relative ${classNameAdditional}`,
+    ghost: `text-green-500 border-gray-100 rounded-[100px] px-[19px] py-[12px] text-xl leading-6 text-white border-2 border-slate-300 relative ${classNameAdditional}`,
+  };
 
-      <ThemeToggler>
-        {({ theme, toggleTheme }) => (
-          <label>
-            <input
-              type="checkbox"
-              onChange={(e) => toggleTheme(e.target.checked ? "dark" : "light")}
-              checked={theme === "dark"}
-            />{" "}
-            Dark mode
-          </label>
-        )}
-      </ThemeToggler>
-      <IconsLibrary type="menu-icon" />
-    </div>
-  );
+  const className = classMappings[variant];
+
+  // Return the class name if found, or an empty string otherwise
+  return className || "";
+}
+
+const BvButton = ({
+  variant,
+  type,
+  url,
+  children,
+  iconType,
+  className,
+  iconClassName,
+}) => {
+  console.log(iconClassName);
+  switch (type) {
+    case "link-internal": {
+      return (
+        <Link to={url} className={getClassnameByType(variant, className)}>
+          {children}
+          {iconType && (
+            <IconsLibrary type={iconType} className={iconClassName} />
+          )}
+        </Link>
+      );
+    }
+    case "link-external": {
+      return (
+        <a
+          href={url}
+          rel="noopener noreferrer"
+          target="_blank"
+          className={getClassnameByType(variant)}
+        >
+          {children}
+          {iconType && (
+            <IconsLibrary type={iconType} className={iconClassName} />
+          )}
+        </a>
+      );
+    }
+    default:
+      return (
+        <button className={getClassnameByType(variant)}>
+          {children}{" "}
+          {iconType && (
+            <IconsLibrary type={iconType} className={iconClassName} />
+          )}
+        </button>
+      );
+  }
 };
 
-export default Button;
+export default BvButton;

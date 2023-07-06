@@ -1,9 +1,8 @@
 import React from "react";
 
-import "../styles/layout.css";
 import Header from "./Header";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   return (
     <div
       style={{
@@ -13,7 +12,7 @@ const Layout = ({ children }) => {
       }}
       className="w-full h-full"
     >
-      <Header />
+      <Header location={location} />
       {children}
     </div>
   );

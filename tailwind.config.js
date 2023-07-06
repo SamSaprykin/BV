@@ -23,7 +23,7 @@ module.exports = {
       lg: "1.125rem",
       xl: "1.25rem",
       "2xl": "1.5rem",
-      "3xl": "1.875rem",
+      "3xl": "32px",
       "4xl": "2.25rem",
       "5xl": "3rem",
       "6xl": "3.4375rem",
@@ -32,20 +32,22 @@ module.exports = {
       "9xl": "11.5rem",
       headingL: "52px",
     },
+
     extend: {
       fontFamily: {
         sans: ["Forma DJR", "sans-serif"],
       },
-      extend: {
-        backgroundColor: {
-          primary: "var(--color-bg-primary)",
-          secondary: "var(--color-bg-secondary)",
-        },
-        textColor: {
-          accent: "var(--color-text-accent)",
-          primary: "var(--color-text-primary)",
-          secondary: "var(--color-text-secondary)",
-        },
+      backgroundColor: {
+        primary: "var(--color-bg-primary)",
+        secondary: "var(--color-bg-secondary)",
+      },
+      textColor: {
+        accent: "var(--color-text-accent)",
+        primary: "var(--color-text-primary)",
+        secondary: "var(--color-text-secondary)",
+      },
+      borderColor: {
+        primary: "var(--color-borderColorItem)",
       },
       height: {
         half: "50%",
@@ -74,6 +76,13 @@ module.exports = {
       },
       animation: {
         "spin-slow": "spin 12s linear infinite",
+        marquee: "marquee 25s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       translate: {
         neg50: "-50%",
