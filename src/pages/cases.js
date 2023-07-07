@@ -187,12 +187,12 @@ export default function Cases({ location }) {
 
   return (
     <Layout location={location}>
-      <div className="bg-primary flex items-center flex-col max-w-[1920px] mx-auto">
+      <div className="bg-primary flex items-center flex-col">
         <div className="h-40 p-16 text-lg">{CasesData.PageName}</div>
       </div>
 
-      <div className="flex flex-wrap px-10 gap-[20px] w-full max-w-[1920px] mx-auto">
-        <div className="bg-black p-[50px] w-1/3 max-w-[600px] flex rounded-3xl">
+      <div className="flex flex-wrap px-10 gap-[20px] w-full">
+        <div className="bg-black p-[50px] w-1/3 flex rounded-3xl">
           <h1
             className={`text-${CasesData.HeroText.textOne.color} text-[42px] leading-none tracking-normal`}
           >

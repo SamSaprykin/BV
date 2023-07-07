@@ -41,6 +41,10 @@ module.exports = {
         primary: "var(--color-bg-primary)",
         secondary: "var(--color-bg-secondary)",
       },
+      gridTemplateColumns: {
+        // Complex site-specific column configuration
+        footer: "minmax(auto, 1fr) minmax(auto, 1fr) 220px",
+      },
       textColor: {
         accent: "var(--color-text-accent)",
         primary: "var(--color-text-primary)",

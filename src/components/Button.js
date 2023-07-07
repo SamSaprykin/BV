@@ -3,10 +3,11 @@ import { Link } from "gatsby";
 import IconsLibrary from "./bvIcons";
 
 function getClassnameByType(variant, classNameAdditional) {
+  console.log(classNameAdditional);
   const classMappings = {
-    primary: `bg-[#40e640] rounded-[100px] px-[19px] py-[12px] text-black text-xl leading-6 relative ${classNameAdditional}`,
-    outline: `bg-transparent rounded-[100px] px-[19px] py-[10px] text-white border-white border-2 box-content text-xl leading-6 relative ${classNameAdditional}`,
-    ghost: `text-green-500 border-gray-100 rounded-[100px] px-[19px] py-[12px] text-xl leading-6 text-white border-2 border-slate-300 relative ${classNameAdditional}`,
+    primary: `bg-[#40e640] rounded-[100px] px-[19px] py-[12px] text-black  leading-6 relative ${classNameAdditional}`,
+    outline: `bg-transparent rounded-[100px] px-[19px] py-[10px] text-white border-white border-2 box-content  leading-6 relative ${classNameAdditional}`,
+    ghost: `text-green-500 border-gray-100 rounded-[100px] px-[19px] py-[12px]  leading-6 text-white border-2 border-slate-300 relative ${classNameAdditional}`,
   };
 
   const className = classMappings[variant];
@@ -24,7 +25,7 @@ const BvButton = ({
   className,
   iconClassName,
 }) => {
-  console.log(iconClassName);
+  console.log(className);
   switch (type) {
     case "link-internal": {
       return (
@@ -42,7 +43,7 @@ const BvButton = ({
           href={url}
           rel="noopener noreferrer"
           target="_blank"
-          className={getClassnameByType(variant)}
+          className={getClassnameByType(variant, className)}
         >
           {children}
           {iconType && (
@@ -53,7 +54,7 @@ const BvButton = ({
     }
     default:
       return (
-        <button className={getClassnameByType(variant)}>
+        <button className={getClassnameByType(variant, className)}>
           {children}{" "}
           {iconType && (
             <IconsLibrary type={iconType} className={iconClassName} />

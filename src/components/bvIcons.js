@@ -89,9 +89,38 @@ const IconsLibrary = ({ type, className, fill, fillChild }) => {
         </g>
       </g>
     </svg>
+  ) : type === "sm-arrow-right" ? (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="14"
+      height="12"
+      viewBox="0 0 14 12"
+      className={className}
+    >
+      <g>
+        <g>
+          <path d="M14 6l-4.28 6H7.416l3.621-5H0V5h11.037L7.416 0H9.72z" />
+        </g>
+      </g>
+    </svg>
+  ) : type === "moon" ? (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
+    >
+      <g>
+        <g>
+          <path
+            fill="#fff"
+            d="M14.136 13.864A12.726 12.726 0 0 1 11.378 0a14.055 14.055 0 0 0-7.237 3.866c-5.52 5.521-5.52 14.473 0 19.993 5.521 5.522 14.471 5.52 19.993 0A14.06 14.06 0 0 0 28 16.622a12.727 12.727 0 0 1-13.864-2.758z"
+          />
+        </g>
+      </g>
+    </svg>
   ) : (
     <></>
   );
 };
-
 export default IconsLibrary;

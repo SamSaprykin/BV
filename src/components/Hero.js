@@ -24,16 +24,27 @@ const Hero = () => {
           variant="primary"
           iconType="eyes"
           iconClassName="absolute -top-4 left-[50%]"
+          className="text-xl"
         >
           Energievergelijk.nl
         </BvButton>
         <span> with rich</span>{" "}
-        <BvButton url="/" type="link-internal" variant="outline">
+        <BvButton
+          url="/"
+          type="link-internal"
+          variant="outline"
+          className="text-xl"
+        >
           Zorgwijzer.nl
         </BvButton>{" "}
         <span>technology to craft</span>
         <span>exciting brands</span>
-        <BvButton url="/" type="link-internal" variant="outline">
+        <BvButton
+          url="/"
+          type="link-internal"
+          variant="outline"
+          className="text-xl"
+        >
           Creditcard.nl
         </BvButton>{" "}
         <BvButton
