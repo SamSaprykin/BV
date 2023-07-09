@@ -15,7 +15,7 @@ const Layout = ({ children, location }) => {
     >
       <Header location={location} />
       {children}
-      <Footer />
+      {location.pathname !== "/" && <Footer />}
     </div>
   );
 };

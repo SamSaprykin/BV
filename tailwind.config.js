@@ -44,6 +44,10 @@ module.exports = {
       gridTemplateColumns: {
         // Complex site-specific column configuration
         footer: "minmax(auto, 1fr) minmax(auto, 1fr) 220px",
+        caseLayout: "2fr 1fr",
+      },
+      gridTemplateRows: {
+        10: "repeat(10, minmax(0, 10fr))",
       },
       textColor: {
         accent: "var(--color-text-accent)",

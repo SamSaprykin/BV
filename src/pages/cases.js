@@ -1,5 +1,5 @@
 import * as React from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
@@ -48,6 +48,7 @@ const CasesData = {
       description: "Zorgverzekeringen vergelijken doe je op Zorgwijzer",
       imgName: "BekijkProject",
       size: "full-empty-space",
+      link: "bekijk-project",
     },
     {
       categories: ["Design partner", "Website design"],
@@ -57,6 +58,7 @@ const CasesData = {
       description: "Dé vergelijkingssite voor creditcards",
       imgName: "Zorgwijzer",
       size: "half",
+      link: "zorgwijzer",
     },
     {
       categories: ["Design partner", "Website design"],
@@ -66,6 +68,7 @@ const CasesData = {
       description: "Dé vergelijkingssite voor creditcards",
       imgName: "EnergievergelijkOne",
       size: "half",
+      link: "zorgwijzer",
     },
     {
       categories: ["Design partner", "Website design"],
@@ -75,6 +78,7 @@ const CasesData = {
       description: "Dé vergelijkingssite voor creditcards",
       imgName: "ZorgwijzerOne",
       size: "full",
+      link: "zorgwijzer",
     },
     {
       categories: ["Design partner", "Website design"],
@@ -84,6 +88,7 @@ const CasesData = {
       description: "Dé vergelijkingssite voor creditcards",
       imgName: "Creditcard",
       size: "half",
+      link: "zorgwijzer",
     },
     {
       categories: ["Design partner", "Website design"],
@@ -93,6 +98,7 @@ const CasesData = {
       description: "Dé vergelijkingssite voor creditcards",
       imgName: "Energievergelijk",
       size: "half",
+      link: "zorgwijzer",
     },
   ],
 };
@@ -226,38 +232,40 @@ export default function Cases({ location }) {
                 borderColor: "var(--borderColorItem)",
               }}
             >
-              <GatsbyImage
-                image={image}
-                alt={useCase.caseName}
-                className="rounded-3xl w-full object-cover"
-              />
-              {useCase.nameType === "general" ? (
-                <h2 className="left-[30px] bottom-[112px] absolute text-white text-3xl">
-                  {useCase.caseName}
-                </h2>
-              ) : (
-                <Mardquee name={useCase.caseName} />
-              )}
+              <Link className="w-full h-full text-primary" to={useCase.link}>
+                <GatsbyImage
+                  image={image}
+                  alt={useCase.caseName}
+                  className="rounded-3xl w-full object-cover"
+                />
+                {useCase.nameType === "general" ? (
+                  <h2 className="left-[30px] bottom-[112px] absolute text-white text-3xl">
+                    {useCase.caseName}
+                  </h2>
+                ) : (
+                  <Mardquee name={useCase.caseName} />
+                )}
 
-              <span className="right-[30px] top-[30px] absolute px-[18px] py-[9px] text-sm text-white border-[1px] rounded-[100px] border-white">
-                {useCase.year}
-              </span>
-              <div className="absolute top-[30px] left-[30px] flex gap-[6px]">
-                {useCase.categories.map((category) => {
-                  return (
-                    <span
-                      key={category}
-                      className="rounded-[100px] bg-white px-[13px] py-[9px] text-sm font-medium leading-none text-black"
-                    >
-                      {category}
-                    </span>
-                  );
-                })}
-              </div>
+                <span className="right-[30px] top-[30px] absolute px-[18px] py-[9px] text-sm text-white border-[1px] rounded-[100px] border-white">
+                  {useCase.year}
+                </span>
+                <div className="absolute top-[30px] left-[30px] flex gap-[6px]">
+                  {useCase.categories.map((category) => {
+                    return (
+                      <span
+                        key={category}
+                        className="rounded-[100px] bg-white px-[13px] py-[9px] text-sm font-medium leading-none text-black"
+                      >
+                        {category}
+                      </span>
+                    );
+                  })}
+                </div>
 
-              <div className="h-[80px] flex px-[30px] items-center">
-                <h3> {useCase.description}</h3>
-              </div>
+                <div className="h-[80px] flex px-[30px] items-center">
+                  <h3> {useCase.description}</h3>
+                </div>
+              </Link>
             </div>
           );
         })}

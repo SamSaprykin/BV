@@ -46,8 +46,10 @@ const Menu = ({ menuData, menuOpen }) => {
     .timeZone.replace(/^.*\//, "");
   return (
     <div
-      className={`rounded-3xl bg-[#1a1a1a] absolute z-10 top-0 right-0 -mr-[15px] -mt-[15px] w-[420px] flex flex-col justify-start ease-in-out duration-300  ${
-        menuOpen ? "opacity-1 p-[40px]" : "opacity-0 p-[32px]"
+      className={`rounded-3xl bg-[#1a1a1a] absolute top-0 right-0 -mr-[15px] -mt-[15px] w-[420px] flex flex-col justify-start ease-in-out duration-300  ${
+        menuOpen
+          ? "opacity-1 p-[40px] z-10 visible"
+          : "opacity-0 p-[32px] z-0 invisible"
       }`}
     >
       <div className="flex flex-col mb-[33px]">
@@ -139,8 +141,8 @@ const Header = ({ location }) => {
         </div>
       </div>
       <div
-        className={`bg-[#1a1a1a] block absolute right-0 top-0 w-screen h-screen ease-in-out duration-300 ${
-          menuOpen ? "opacity-25" : "opacity-0"
+        className={`bg-[#1a1a1a] absolute right-0 top-0 w-screen h-screen ease-in-out duration-300 ${
+          menuOpen ? "opacity-25 block" : "opacity-0 hidden"
         }`}
       />
     </div>
