@@ -37,6 +37,9 @@ module.exports = {
       fontFamily: {
         sans: ["Forma DJR", "sans-serif"],
       },
+      transitionDuration: {
+        2000: "2000ms",
+      },
       backgroundColor: {
         primary: "var(--color-bg-primary)",
         secondary: "var(--color-bg-secondary)",

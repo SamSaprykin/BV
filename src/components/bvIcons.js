@@ -298,6 +298,22 @@ const IconsLibrary = ({ type, className, fill, fillChild }) => {
         </g>
       </g>
     </svg>
+  ) : type === "arrow-square" ? (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="14"
+      height="12"
+      viewBox="0 0 14 12"
+    >
+      <g>
+        <g>
+          <path
+            fill="#fff"
+            d="M7.415 12l3.622-5H0V0h2v5h9.037L7.415 0H9.72l4.279 6.001L9.719 12z"
+          />
+        </g>
+      </g>
+    </svg>
   ) : (
     <></>
   );

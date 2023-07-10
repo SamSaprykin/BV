@@ -13,7 +13,8 @@ const CaseData = {
     categories: ["Design partner", "Website design"],
     caseName: "Zorgwijzer",
     year: "2023",
-    websiteUrl: "creditcard.nl",
+    websiteUrlText: "creditcard.nl",
+    websiteUrlLink: "https://www.creditcard.nl/",
     testimonials: [
       {
         authorName: "De klant: ",
