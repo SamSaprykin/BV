@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 import IconsLibrary from "./bvIcons";
 
 function getClassnameByType(variant, classNameAdditional) {
-  console.log(classNameAdditional);
   const classMappings = {
     primary: `bg-[#40e640] rounded-[100px] px-[19px] py-[12px] text-black  leading-6 relative ${classNameAdditional}`,
     outline: `bg-transparent rounded-[100px] px-[19px] py-[10px] text-white border-white border-2 box-content  leading-6 relative ${classNameAdditional}`,
@@ -25,7 +24,6 @@ const BvButton = ({
   className,
   iconClassName,
 }) => {
-  console.log(className);
   switch (type) {
     case "link-internal": {
       return (

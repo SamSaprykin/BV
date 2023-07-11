@@ -43,6 +43,9 @@ module.exports = {
       backgroundColor: {
         primary: "var(--color-bg-primary)",
         secondary: "var(--color-bg-secondary)",
+        mainGreen: "#40e640",
+        "gray-testimonial": "var(--gray-color)",
+        "regal-blue": "#243c5a",
       },
       gridTemplateColumns: {
         // Complex site-specific column configuration
@@ -51,6 +54,7 @@ module.exports = {
       },
       gridTemplateRows: {
         10: "repeat(10, minmax(0, 10fr))",
+        11: "repeat(11, minmax(0, 11fr))",
       },
       textColor: {
         accent: "var(--color-text-accent)",

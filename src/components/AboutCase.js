@@ -1,6 +1,31 @@
 import React, { useState, useEffect } from "react";
 import IconsLibrary from "./bvIcons";
 
+const MemberIcon = ({ member }) => {
+  const [active, setActive] = useState(false);
+  return (
+    <div
+      key={member.memberName}
+      className="relative text-center"
+      onMouseEnter={() => setActive(!active)}
+      onMouseLeave={() => setActive(!active)}
+    >
+      <img src={member.memberIcon} />
+      <span
+        className={`${
+          active ? "-top-6 opacity-100" : "-top-4 opacity-0"
+        } transition-all ease-in-out	duration-500 bg-mainGreen text-[12px] px-[10px] py-[5px] absolute  right-2 rounded-[4px]`}
+      >
+        {member.memberName}
+        <IconsLibrary
+          type="triangle"
+          className="absolute top-[28px] right-[30%]"
+        />
+      </span>
+    </div>
+  );
+};
+
 const AboutCase = ({ data }) => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
@@ -22,7 +47,7 @@ const AboutCase = ({ data }) => {
     }
   );
   return (
-    <div className="row-span-2 bg-black rounded-3xl px-[50px] py-[30px]">
+    <div className="row-span-2 bg-black rounded-3xl px-[50px] py-[30px] relative">
       <div className="flex justify-between w-full text-[#a5a5a5] mb-[50px] text-[14px]">
         <span className="">{data.caseName}</span>
         <span>{data.year}</span>
@@ -41,7 +66,6 @@ const AboutCase = ({ data }) => {
       </div>
       <div className="mt-[30px] relative h-[200px]">
         {data.testimonials.map((testimonial, index) => {
-          console.log(currentTestimonial === index, index, currentTestimonial);
           return (
             <div
               key={testimonial.authorName}
@@ -85,12 +109,24 @@ const AboutCase = ({ data }) => {
           href={data.websiteUrlLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="mr-[11px] relative pl-[14px] text-white text-[22px] underline before:block before:absolute before:w-[6px] before:h-[6px] before:rounded-full before:bg-white before:top-[14px] before:left-0 before:bg-[#40e640]"
+          className="mr-[11px] relative pl-[14px] text-white text-[22px] underline before:block before:absolute before:w-[6px] before:h-[6px] before:rounded-full before:bg-white before:top-[14px] before:left-0 before:bg-mainGreen"
         >
           {data.websiteUrlText}
         </a>
         <IconsLibrary type="arrow-square" />
       </div>
+      {data.team && (
+        <div className="absolute bottom-[50px] left-[50px] flex flex-col">
+          <h5 className="text-[#a5a5a5] text=[14px] mb-[23px]">
+            Brainpower behind this project
+          </h5>
+          <div className="flex gap-2">
+            {data.team.map((member) => {
+              return <MemberIcon key={member.memberName} member={member} />;
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

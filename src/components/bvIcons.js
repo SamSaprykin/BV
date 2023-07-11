@@ -96,10 +96,28 @@ const IconsLibrary = ({ type, className, fill, fillChild }) => {
       height="12"
       viewBox="0 0 14 12"
       className={className}
+      fill={fill}
     >
       <g>
         <g>
           <path d="M14 6l-4.28 6H7.416l3.621-5H0V5h11.037L7.416 0H9.72z" />
+        </g>
+      </g>
+    </svg>
+  ) : type === "sm-arrow-right-white" ? (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="14"
+      height="12"
+      viewBox="0 0 14 12"
+      className={className}
+    >
+      <g>
+        <g>
+          <path
+            fill="#fff"
+            d="M14 6l-4.28 6H7.416l3.621-5H0V5h11.037L7.416 0H9.72z"
+          />
         </g>
       </g>
     </svg>
@@ -311,6 +329,37 @@ const IconsLibrary = ({ type, className, fill, fillChild }) => {
             fill="#fff"
             d="M7.415 12l3.622-5H0V0h2v5h9.037L7.415 0H9.72l4.279 6.001L9.719 12z"
           />
+        </g>
+      </g>
+    </svg>
+  ) : type === "star" ? (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="21"
+      height="20"
+      viewBox="0 0 21 20"
+      className={className}
+    >
+      <g>
+        <g>
+          <path
+            fill="#40e640"
+            d="M14.026 5.647l5.93-.026L21 8.889l-4.78 3.477 1.829 5.62L15.28 20l-4.78-3.503L5.72 20l-2.768-2.013 1.854-5.62L0 8.888l1.045-3.268 5.93.026L8.802 0h3.395z"
+          />
+        </g>
+      </g>
+    </svg>
+  ) : type === "triangle" ? (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="6"
+      viewBox="0 0 16 6"
+      className={className}
+    >
+      <g>
+        <g transform="rotate(-180 8 3)">
+          <path fill="#40e640" d="M8 0l8 6H0z" />
         </g>
       </g>
     </svg>

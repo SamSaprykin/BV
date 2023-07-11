@@ -1,11 +1,13 @@
 import * as React from "react";
-import { graphql, Link, useStaticQuery } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { graphql, useStaticQuery } from "gatsby";
+
 import Layout from "../../components/Layout";
-import IconsLibrary from "../../components/bvIcons";
+
 import CaseImage from "../../components/CaseImage";
 import CaseLogo from "../../components/CaseLogo";
 import AboutCase from "../../components/AboutCase";
+import CtaComponent from "../../components/CtaComponents";
+import BodyTestimonial from "../../components/BodyTestimonial";
 
 const CaseData = {
   PageName: "Cases — Zorgwijzer.nl",
@@ -15,6 +17,20 @@ const CaseData = {
     year: "2023",
     websiteUrlText: "creditcard.nl",
     websiteUrlLink: "https://www.creditcard.nl/",
+    team: [
+      {
+        memberName: "Maid",
+        memberIcon: "/maid.png",
+      },
+      {
+        memberName: "Seyi",
+        memberIcon: "/seyi.png",
+      },
+      {
+        memberName: "Troy",
+        memberIcon: "/troy.png",
+      },
+    ],
     testimonials: [
       {
         authorName: "De klant: ",
@@ -88,6 +104,17 @@ const CaseData = {
       type: "image",
       imgName: "eight",
       className: "row-span-1 col-span-2",
+    },
+    {
+      type: "body-testimonial",
+      rating: 5,
+      authorImage: "/photo.png",
+      authorName: "Bart Koenraadt",
+      authorPosition: "CEO",
+      authorCompany: "Zorgwijzer.nl",
+      testimonial:
+        "I have been working with BrightBunch for nearly two years now. With their keen eye for design, development skills, and expert project management, I have managed to serve a lot more clients than I would without them.",
+      className: "col-span-4 row-span-2",
     },
     {
       type: "image",
@@ -255,6 +282,18 @@ export default function CasePage({ location }) {
                       className={component.className}
                     />
                   );
+                case "body-testimonial":
+                  return (
+                    <BodyTestimonial
+                      testimonial={component.testimonial}
+                      className={component.className}
+                      rating={component.rating}
+                      authorImage={component.authorImage}
+                      authorName={component.authorName}
+                      authorPosition={component.authorPosition}
+                      authorCompany={component.authorCompany}
+                    />
+                  );
                 case "case-logo":
                   return (
                     <CaseLogo
@@ -268,10 +307,17 @@ export default function CasePage({ location }) {
               }
             })}
           </div>
-          <div className="grid grid-rows-10 ">
+          <div className="grid grid-rows-11">
             <AboutCase data={CaseData.AboutCase} />
           </div>
         </div>
+        {CaseData.ctaComponent && (
+          <CtaComponent
+            text={CaseData.ctaComponent.text}
+            ctaRoute={CaseData.ctaComponent.ctaRoute}
+            ctaText={CaseData.ctaComponent.ctaText}
+          />
+        )}
       </div>
     </Layout>
   );

@@ -17,6 +17,7 @@ a {
 
 body {
   --bg: white;
+  --gray-color: #ebebeb;
   --textNormal: #222;
   --textTitle: #222;
   --textLink: blue;
@@ -27,7 +28,7 @@ body {
 
 body.dark {
   -webkit-font-smoothing: antialiased;
-
+  --gray-color: #272727;
   --bg: #1a1a1a;
   --textNormal: rgba(255, 255, 255, 1);
   --textTitle: white;
