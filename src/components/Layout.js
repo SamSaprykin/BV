@@ -3,7 +3,7 @@ import Footer from "./Footer";
 
 import Header from "./Header";
 
-const Layout = ({ children, location }) => {
+const Layout = ({ children, location, includeFooter }) => {
   return (
     <div
       style={{
@@ -15,7 +15,7 @@ const Layout = ({ children, location }) => {
     >
       <Header location={location} />
       {children}
-      {location.pathname !== "/" && <Footer />}
+      {location.pathname !== "/" && includeFooter && <Footer />}
     </div>
   );
 };

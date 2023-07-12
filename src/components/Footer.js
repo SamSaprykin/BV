@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ThemeToggler } from "gatsby-plugin-dark-mode";
 import { Link } from "gatsby";
 import IconsLibrary from "./bvIcons";
@@ -13,6 +13,27 @@ const footerData = {
   ctaRoute: "/contact",
   email: "hola@bb.studio",
   mobile: "085 06 5314",
+  currentProjects: {
+    amount: 4,
+    projects: [
+      {
+        projectName: "Aantal",
+        description: "lopende projecten",
+      },
+      {
+        projectName: "Zorgwijzer",
+        description: "lopende projecten",
+      },
+      {
+        projectName: "Energievergelijk",
+        description: "Dé vergelijkingssite voor creditcards",
+      },
+      {
+        projectName: "Creditcard",
+        description: "lopende projecten",
+      },
+    ],
+  },
   social: {
     address: "Schiekade 143B 3033BM, Rotterdam (NL)",
     registrationOne: "KvK Rotterdam: 62222724",
@@ -47,6 +68,26 @@ const footerData = {
 };
 
 const Footer = () => {
+  const [currentProject, setCurrentProject] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentProject(
+        (prevIndex) =>
+          (prevIndex + 1) % footerData.currentProjects.projects.length
+      );
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, [footerData.currentProjects.projects.length]);
+
+  const navArray = Array.from(
+    { length: footerData.currentProjects.projects.length },
+    (_, index) => {
+      // Create your element here based on the index or originalArray
+      return `Element ${index}`;
+    }
+  );
   return (
     <div className="grid grid-cols-footer px-10 pt-[20px] bg-primary gap-x-[20px] mb-[50px]">
       <div className="flex flex-col px-[50px] pt-[42px] pb-[31px] bg-[#40e643] h-[400px] rounded-[25px] items-start">
@@ -113,7 +154,52 @@ const Footer = () => {
         <div className="bg-[#313131] rounded-[25px] h-[100px] w-full flex items-center justify-center">
           <IconsLibrary type="moon" />
         </div>
-        <div className="bg-[#313131] rounded-[25px] grow"></div>
+        <div className="bg-[#313131] rounded-[25px] grow p-[20px] flex flex-col items-center justify-between">
+          <h2 className="text-[62px] text-white mt-[20px]">
+            {footerData.currentProjects.amount}
+          </h2>
+          <div className="mt-[20px] relative h-[60px] w-full text-center">
+            {footerData.currentProjects.projects.map((project, index) => {
+              return (
+                <div
+                  key={project.projectName}
+                  className={`text-2xl leading-tight absolute top-0 left-0 w-full h-full transition-all ease-in-out	duration-2000	 ${
+                    index === currentProject
+                      ? "opacity-100"
+                      : "opacity-0 pointer-events-none"
+                  }`}
+                >
+                  {currentProject === index ? (
+                    <div className="text-white text-[14px]">
+                      <h3 className="text-[#a5a5a5] text-[14px]">
+                        {project.projectName}
+                      </h3>
+                      <span>{project.description}</span>
+                    </div>
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-2 flex">
+            {navArray.map((el, index) => {
+              return (
+                <div
+                  key={el}
+                  className={`rounded-[100px] transition-all ease-in-out	duration-1000  h-[6px] mr-[8px] hover:cursor-pointer ${
+                    index === currentProject
+                      ? "w-[20px] bg-white"
+                      : "w-[6px] bg-[#737373]"
+                  }`}
+                  onClick={() => setCurrentProject(index)}
+                />
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );

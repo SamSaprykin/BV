@@ -8,9 +8,11 @@ import CaseLogo from "../../components/CaseLogo";
 import AboutCase from "../../components/AboutCase";
 import CtaComponent from "../../components/CtaComponents";
 import BodyTestimonial from "../../components/BodyTestimonial";
+import RelatedCases from "../../components/RelatedCases";
 
 const CaseData = {
   PageName: "Cases — Zorgwijzer.nl",
+  IncludeFooter: false,
   AboutCase: {
     categories: ["Design partner", "Website design"],
     caseName: "Zorgwijzer",
@@ -153,6 +155,48 @@ const CaseData = {
     ctaText: "Get in touch",
     ctaRoute: "/contact",
   },
+
+  relatedCases: {
+    type: "related",
+    cases: [
+      {
+        name: "Bekijk project",
+        imageName: "six",
+        categories: ["Design partner", "Website design"],
+        link: "zorgwijzer",
+      },
+      {
+        name: "Zorgwijzer",
+        imageName: "three",
+        categories: ["Design partner", "Website design"],
+        link: "zorgwijzer",
+      },
+      {
+        name: "Energievergelijk.nl",
+        imageName: "seven",
+        categories: ["Design partner", "Website design"],
+        link: "zorgwijzer",
+      },
+      {
+        name: "Creditcard.nl",
+        imageName: "fourteen",
+        categories: ["Design partner", "Website design"],
+        link: "zorgwijzer",
+      },
+      {
+        name: "Energievergelijk.nl",
+        imageName: "eleven",
+        categories: ["Design partner", "Website design"],
+        link: "zorgwijzer",
+      },
+      {
+        name: "Aantal",
+        imageName: "fiveteen",
+        categories: ["Design partner", "Website design"],
+        link: "zorgwijzer",
+      },
+    ],
+  },
 };
 
 export default function CasePage({ location }) {
@@ -268,7 +312,7 @@ export default function CasePage({ location }) {
   `);
 
   return (
-    <Layout location={location}>
+    <Layout location={location} includeFooter={CaseData.IncludeFooter}>
       <div className="bg-primary flex items-center flex-col">
         <div className="h-40 p-16 text-lg">{CaseData.PageName}</div>
         <div className="grid grid-cols-caseLayout w-full px-10 gap-x-[20px]">
@@ -318,6 +362,7 @@ export default function CasePage({ location }) {
             ctaText={CaseData.ctaComponent.ctaText}
           />
         )}
+        <RelatedCases images={CaseImages} cases={CaseData.relatedCases.cases} />
       </div>
     </Layout>
   );

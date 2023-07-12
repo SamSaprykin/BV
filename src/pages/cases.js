@@ -20,6 +20,7 @@ function getWidthByType(variant) {
 
 const CasesData = {
   PageName: "Cases",
+  IncludeFooter: true,
   HeroText: {
     type: "text",
     textOne: {
@@ -192,7 +193,7 @@ export default function Cases({ location }) {
   `);
 
   return (
-    <Layout location={location}>
+    <Layout location={location} includeFooter={CasesData.IncludeFooter}>
       <div className="bg-primary flex items-center flex-col">
         <div className="h-40 p-16 text-lg">{CasesData.PageName}</div>
       </div>
