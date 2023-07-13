@@ -13,7 +13,7 @@ const NavBar = {
     },
     {
       name: "What we do",
-      url: "/what-we-do",
+      url: "/services",
     },
     {
       name: "Who we are",
