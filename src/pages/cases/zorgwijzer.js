@@ -202,8 +202,8 @@ const CaseData = {
 export default function CasePage({ location }) {
   console.log(location);
 
-  const CaseImages = useStaticQuery(graphql`
-    query CaseImages {
+  const ZorgImages = useStaticQuery(graphql`
+    query ZorgImages {
       one: file(relativePath: { eq: "images/case/1.png" }) {
         childImageSharp {
           gatsbyImageData(
@@ -322,7 +322,7 @@ export default function CasePage({ location }) {
                 case "image":
                   return (
                     <CaseImage
-                      image={CaseImages[component.imgName]}
+                      image={ZorgImages[component.imgName]}
                       className={component.className}
                     />
                   );
@@ -362,7 +362,7 @@ export default function CasePage({ location }) {
             ctaText={CaseData.ctaComponent.ctaText}
           />
         )}
-        <RelatedCases images={CaseImages} cases={CaseData.relatedCases.cases} />
+        <RelatedCases images={ZorgImages} cases={CaseData.relatedCases.cases} />
       </div>
     </Layout>
   );
