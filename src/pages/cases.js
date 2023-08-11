@@ -204,7 +204,7 @@ export default function Cases({ location }) {
             className={`text-${CasesData.HeroText.textOne.color} text-[42px] leading-none tracking-normal`}
           >
             <span
-              className={`text-${CasesData.HeroText.textOne.color} text-[42px] leading-none after:content-[''] after:mx-2 after:bg-[url("/cases/cases-text-image.png")] after:w-[100px] after:h-[38px] after:inline-block after:align-middle`}
+              className={`text-${CasesData.HeroText.textOne.color} text-[42px] leading-none after:content-[''] after:mx-2 after:bg-[url("/cases-text-image.png")] after:w-[100px] after:h-[38px] after:inline-block after:align-middle`}
             >
               {CasesData.HeroText.textOne.content}
             </span>

@@ -23,7 +23,7 @@ const BodyTestimonial = ({
           </h5>
           <div className="first-letter:pl-[100px] relative w-full max-w-[1000px] text-[32px] leading-[36px]">
             <p className="font-medium before:absolute before:w-[80px] before:h-[50px] before:left-4 before:-top-4 before: before:bg-[url('/photo.png')]">
-              "{testimonial}"
+              &quot;{testimonial}&quot;
             </p>
           </div>
         </div>
