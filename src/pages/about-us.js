@@ -3,6 +3,8 @@ import { graphql, useStaticQuery } from "gatsby";
 
 import Layout from "../components/Layout";
 import KeyNumbers from "../components/KeyNumbers";
+import KeyValues from "../components/KeyValues";
+import Team from "../components/Team";
 
 const AboutData = {
   PageName: "About Us",
@@ -51,16 +53,36 @@ const AboutData = {
   KeyValues: {
     items: [
       {
+        type: "highlight",
+        text: "We created BrightBunch by blending our skills in design, development and creative strategy to build forward thinking digital experiences, so you can focus on result-driven outcomes.",
+      },
+      {
+        type: "text",
         text: "We are not a lorem-ipsum agency that worries about text and images later. Content must always drive design.",
+        info: "Our Values",
+        indexNumber: "01",
       },
       {
+        type: "text",
         text: "When you ask us to do something we’ll often challenge you on it. Digging deeper into a problem makes for a better result.",
+        info: "Our Values",
+        indexNumber: "02",
       },
       {
+        type: "image",
+        imageName: "team",
+      },
+      {
+        type: "text",
         text: "Our best work is done when we start with strategy. It’s not rocket science, it’s just a plan.",
+        info: "Our Values",
+        indexNumber: "03",
       },
       {
+        type: "text",
         text: "Building a great agency means building the best team. We pride ourselves on the calibre of our people and the work they’ve done.",
+        info: "Our Values",
+        indexNumber: "04",
       },
     ],
   },
@@ -71,59 +93,59 @@ const AboutData = {
     members: [
       {
         name: "Leandro",
-        icon: "",
+        icon: "/teamMembers/leandro.png",
         position: "Brand Design Team Lead",
         yearJoined: "2015",
-        brand: "NL",
+        country: "NL",
       },
       {
         name: "Jadyn",
-        icon: "",
+        icon: "/teamMembers/jadyn.png",
         position: "Senior Product Designer",
         yearJoined: "2015",
-        brand: "NL",
+        country: "NL",
       },
       {
         name: "Claudio",
-        icon: "",
+        icon: "/teamMembers/claudio.png",
         position: "React Developer",
         yearJoined: "2015",
-        brand: "NL",
+        country: "NL",
       },
       {
         name: "Maid",
-        icon: "",
+        icon: "/teamMembers/maid.png",
         position: "Founder",
         yearJoined: "2015",
-        brand: "NL",
+        country: "NL",
       },
       {
         name: "Petar",
-        icon: "",
+        icon: "/teamMembers/petar.png",
         position: "UX Researcher",
         yearJoined: "2015",
-        brand: "NL",
+        country: "NL",
       },
       {
         name: "Pourya",
-        icon: "",
+        icon: "/teamMembers/pourya.png",
         position: "Senior Brand Designer",
         yearJoined: "2015",
-        brand: "NL",
+        country: "NL",
       },
       {
         name: "Neuyen",
-        icon: "",
+        icon: "/teamMembers/neuyen.png",
         position: "Chief Executive Officer",
         yearJoined: "2015",
-        brand: "NL",
+        country: "NL",
       },
       {
         name: "Tia",
-        icon: "",
+        icon: "/teamMembers/tia.png",
         position: "HR Specialist",
         yearJoined: "2015",
-        brand: "NL",
+        country: "NL",
       },
     ],
   },
@@ -173,12 +195,24 @@ const AboutData = {
 };
 
 export default function AboutUs({ location }) {
+  const AboutImages = useStaticQuery(graphql`
+    query AboutImages {
+      team: file(relativePath: { eq: "images/about/team.png" }) {
+        childImageSharp {
+          gatsbyImageData(
+            webpOptions: { quality: 100 }
+            blurredOptions: { toFormat: WEBP }
+          )
+        }
+      }
+    }
+  `);
   return (
     <Layout location={location} includeFooter={AboutData.IncludeFooter}>
       <div className="bg-primary flex items-center flex-col">
         <div className="h-40 p-16 text-lg">{AboutData.PageName}</div>
-        <div className="flex flex-wrap px-10 gap-[20px] w-full">
-          <div className="bg-black p-[50px] w-1/3 flex rounded-3xl">
+        <div className="grid grid-cols-12 gap-4 px-10 w-full">
+          <div className="bg-black p-[50px] col-span-4 flex rounded-3xl">
             <h1
               className={`text-${AboutData.HeroText.textOne.color} text-[42px] leading-none tracking-normal`}
             >
@@ -203,6 +237,15 @@ export default function AboutUs({ location }) {
             title={AboutData.KeyNumbers.title}
             titleHighlight={AboutData.KeyNumbers.titleHighlight}
             numberItems={AboutData.KeyNumbers.numbers}
+          />
+          <KeyValues
+            valuesItems={AboutData.KeyValues.items}
+            images={AboutImages}
+          />
+          <Team
+            title={AboutData.Team.title}
+            titleHighlight={AboutData.Team.titleHighlight}
+            members={AboutData.Team.members}
           />
         </div>
       </div>

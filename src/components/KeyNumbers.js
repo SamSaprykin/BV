@@ -6,7 +6,7 @@ const KeyNumbers = ({ title, numberItems, titleHighlight }) => {
   console.log(title, titleHighlight, numberItems);
   return (
     <div
-      className={`w-[calc(66.6%-20px)] pt-[50px] bg-[#313131] rounded-3xl flex flex-col`}
+      className={`col-span-8 pt-[50px] bg-[#313131] rounded-3xl flex flex-col`}
     >
       <div className="w-full max-w-[65%] mb-8 px-[50px]">
         <h2 className="text-[32px] leading-[40px] font-medium text-white ">
