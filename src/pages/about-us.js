@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import KeyNumbers from "../components/KeyNumbers";
 import KeyValues from "../components/KeyValues";
 import Team from "../components/Team";
+import FaqComponent from "../components/Faq";
 
 const AboutData = {
   PageName: "About Us",
@@ -156,39 +157,45 @@ const AboutData = {
       {
         faqQuestion:
           "What about hosting, Do I have to host my website with you?",
-        faqAnswer: "What about hosting, Do I have to host my website with you?",
+        faqAnswer:
+          "If you already have a hosting provider in mind or currently have a hosting plan in place, we can design and develop the website to be compatible with your chosen hosting environment. Our goal is to ensure that your website functions seamlessly regardless of the hosting provider you select.",
       },
       {
         faqQuestion: "Do you do graphics design and Can you make me a logo?",
-        faqAnswer: "Do you do graphics design and Can you make me a logo?",
+        faqAnswer:
+          "Yes, we offer professional graphic design services, including logo design. Our team of skilled designers specializes in creating unique and impactful logos that represent your brand identity effectively. We understand the importance of a well-designed logo in making a lasting impression on your target audience. From conceptualization to the final product, we work closely with you to understand your vision, values, and target market.",
       },
       {
         faqQuestion: "SEO Are your websites SEO friendly?",
-        faqAnswer: "SEO Are your websites SEO friendly?",
+        faqAnswer:
+          "Absolutely! Ensuring that our websites are SEO-friendly is a top priority for us. We understand the importance of search engine optimization (SEO) in driving organic traffic to your website and improving your online visibility. Our team of web developers and designers follows best practices and implements SEO-friendly elements throughout the website development process.",
       },
       {
         faqQuestion: "How long will it take to get to the 1st page of Google?",
-        faqAnswer: "How long will it take to get to the 1st page of Google?",
+        faqAnswer:
+          "The time it takes to reach the first page of Google’s search results can vary significantly depending on several factors. It’s important to understand that achieving a high ranking on the first page is a complex and ongoing process that requires strategic efforts and continuous optimization. ",
       },
       {
         faqQuestion:
           "Actually, I know nothing about websites. How does this website process work?",
         faqAnswer:
-          "Actually, I know nothing about websites. How does this website process work?",
+          "We begin by understanding your goals, target audience, and specific requirements. We conduct a thorough analysis of your industry and competitors to identify opportunities for differentiation. This stage involves discussions, brainstorming, and gathering all the necessary information.",
       },
       {
         faqQuestion: "How long does it take to build a website?",
-        faqAnswer: "How long does it take to build a website?",
+        faqAnswer:
+          "The time it takes to build a website can vary depending on several factors, such as the complexity of the project, the size of the website, the specific features and functionality required, and the responsiveness of all parties involved in the process. <br /> <br /> For a simple informational website with standard features, the development timeline can range from a few weeks to a couple of months. This timeframe includes various stages, such as initial planning, design, development, content creation, and testing.",
       },
       {
         faqQuestion: "How long will it take to get to the 1st page of Google?",
-        faqAnswer: "How long will it take to get to the 1st page of Google?",
+        faqAnswer:
+          "The time it takes to reach the first page of Google’s search results can vary significantly depending on several factors. It’s important to understand that achieving a high ranking on the first page is a complex and ongoing process that requires strategic efforts and continuous optimization. ",
       },
       {
         faqQuestion:
           "Actually, I know nothing about websites. How does this website process work?",
         faqAnswer:
-          "Actually, I know nothing about websites. How does this website process work?",
+          "We begin by understanding your goals, target audience, and specific requirements. We conduct a thorough analysis of your industry and competitors to identify opportunities for differentiation. This stage involves discussions, brainstorming, and gathering all the necessary information.",
       },
     ],
   },
@@ -198,6 +205,14 @@ export default function AboutUs({ location }) {
   const AboutImages = useStaticQuery(graphql`
     query AboutImages {
       team: file(relativePath: { eq: "images/about/team.png" }) {
+        childImageSharp {
+          gatsbyImageData(
+            webpOptions: { quality: 100 }
+            blurredOptions: { toFormat: WEBP }
+          )
+        }
+      }
+      faq: file(relativePath: { eq: "images/about/about-image.png" }) {
         childImageSharp {
           gatsbyImageData(
             webpOptions: { quality: 100 }
@@ -246,6 +261,13 @@ export default function AboutUs({ location }) {
             title={AboutData.Team.title}
             titleHighlight={AboutData.Team.titleHighlight}
             members={AboutData.Team.members}
+          />
+          <FaqComponent
+            faqItems={AboutData.FaqSection.faqItems}
+            faqTitle={AboutData.FaqSection.title}
+            faqTitleHighlight={AboutData.FaqSection.titleHighlight}
+            imageName="faq"
+            images={AboutImages}
           />
         </div>
       </div>

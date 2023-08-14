@@ -1,5 +1,4 @@
 import React from "react";
-import { getImage, GatsbyImage } from "gatsby-plugin-image";
 
 const Team = ({ title, titleHighlight, members }) => {
   return (

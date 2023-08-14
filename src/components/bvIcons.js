@@ -363,6 +363,20 @@ const IconsLibrary = ({ type, className, fill, fillChild }) => {
         </g>
       </g>
     </svg>
+  ) : type === "expand-faq" ? (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="var(--textNormal)"
+    >
+      <g>
+        <g>
+          <path d="M16 7.2l-6.428-.772L8.8 0H7.2l-.772 6.428L0 7.2v1.6l6.428.772L7.2 16h1.6l.772-6.428L16 8.8z" />
+        </g>
+      </g>
+    </svg>
   ) : (
     <></>
   );

@@ -44,6 +44,7 @@ module.exports = {
         primary: "var(--color-bg-primary)",
         secondary: "var(--color-bg-secondary)",
         mainGreen: "#40e640",
+        "gray-faq": "var(--dark-color)",
         "gray-testimonial": "var(--gray-color)",
         "regal-blue": "#243c5a",
       },
