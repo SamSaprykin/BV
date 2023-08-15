@@ -186,17 +186,6 @@ const AboutData = {
         faqAnswer:
           "The time it takes to build a website can vary depending on several factors, such as the complexity of the project, the size of the website, the specific features and functionality required, and the responsiveness of all parties involved in the process. <br /> <br /> For a simple informational website with standard features, the development timeline can range from a few weeks to a couple of months. This timeframe includes various stages, such as initial planning, design, development, content creation, and testing.",
       },
-      {
-        faqQuestion: "How long will it take to get to the 1st page of Google?",
-        faqAnswer:
-          "The time it takes to reach the first page of Google’s search results can vary significantly depending on several factors. It’s important to understand that achieving a high ranking on the first page is a complex and ongoing process that requires strategic efforts and continuous optimization. ",
-      },
-      {
-        faqQuestion:
-          "Actually, I know nothing about websites. How does this website process work?",
-        faqAnswer:
-          "We begin by understanding your goals, target audience, and specific requirements. We conduct a thorough analysis of your industry and competitors to identify opportunities for differentiation. This stage involves discussions, brainstorming, and gathering all the necessary information.",
-      },
     ],
   },
 };

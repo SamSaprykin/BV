@@ -19,6 +19,7 @@ body {
   --bg: white;
   --gray-color: #ebebeb;
   --dark-color: #d9d9d9;
+  --faq-color: #313131;
   --textNormal: #222;
   --textTitle: #222;
   --textLink: blue;
@@ -31,6 +32,7 @@ body.dark {
   -webkit-font-smoothing: antialiased;
   --gray-color: #272727;
   --dark-color: #313131;
+  --faq-color: #272727;
   --bg: #1a1a1a;
   --textNormal: rgba(255, 255, 255, 1);
   --textTitle: white;
@@ -41,6 +43,10 @@ body.dark {
 
 .disable-scroll {
   overflow: hidden;
+}
+
+.scroll-beh {
+	scroll-behavior: smooth
 }
 
 @font-face {
