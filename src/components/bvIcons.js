@@ -3,7 +3,7 @@ import React from "react";
 
 /* Elements Decoration Icons */
 
-const IconsLibrary = ({ type, className, fill, fillChild }) => {
+const IconsLibrary = ({ type, className, fill, fillChild, style }) => {
   return type === "menu-icon" ? (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -66,6 +66,33 @@ const IconsLibrary = ({ type, className, fill, fillChild }) => {
             >
               <tspan fontFamily="'Apple Color Emoji','AppleColorEmoji'">
                 👀
+              </tspan>
+            </text>
+          </g>
+        </g>
+      </g>
+    </svg>
+  ) : type === "rocket" ? (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="32"
+      viewBox="0 0 24 32"
+      className={className}
+    >
+      <g>
+        <g>
+          <g>
+            <text
+              dominantBaseline="text-before-edge"
+              fill="#fff"
+              fontFamily="'Forma DJR Cyrillic Micro','FormaDJRCyrillicMicro-Regular'"
+              fontSize="24"
+              fontStyle="none"
+              fontWeight="400"
+            >
+              <tspan fontFamily="'Apple Color Emoji','AppleColorEmoji'">
+                🚀
               </tspan>
             </text>
           </g>
@@ -375,6 +402,37 @@ const IconsLibrary = ({ type, className, fill, fillChild }) => {
       <g>
         <g>
           <path d="M16 7.2l-6.428-.772L8.8 0H7.2l-.772 6.428L0 7.2v1.6l6.428.772L7.2 16h1.6l.772-6.428L16 8.8z" />
+        </g>
+      </g>
+    </svg>
+  ) : type === "cross-mark" ? (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+    >
+      <g>
+        <g transform="rotate(45 6 6)">
+          <path
+            fill={fill}
+            d="M13 5.3l-5.625-.675L6.7-1H5.3l-.675 5.625L-1 5.3v1.4l5.625.675L5.3 13h1.4l.675-5.625L13 6.7z"
+          />
+        </g>
+      </g>
+    </svg>
+  ) : type === "triangle-range" ? (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="18"
+      viewBox="0 0 24 18"
+      style={style}
+      fill={fill}
+    >
+      <g>
+        <g transform="rotate(-180 12 9)">
+          <path d="M12 0l12 18H0z" />
         </g>
       </g>
     </svg>

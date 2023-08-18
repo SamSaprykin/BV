@@ -48,6 +48,7 @@ module.exports = {
         "faq-color": "var(--faq-color)",
         "gray-testimonial": "var(--gray-color)",
         "regal-blue": "#243c5a",
+        "checked-input": "var(--checked-input)",
       },
       gridTemplateColumns: {
         // Complex site-specific column configuration
@@ -63,9 +64,12 @@ module.exports = {
         accent: "var(--color-text-accent)",
         primary: "var(--color-text-primary)",
         secondary: "var(--color-text-secondary)",
+        textChecked: "var(--color-checked)",
       },
       borderColor: {
         primary: "var(--color-borderColorItem)",
+        input: "var(--color-borderInputItem)",
+        inputChecked: "var(--color-borderInputItemChecked)",
       },
       height: {
         half: "50%",
