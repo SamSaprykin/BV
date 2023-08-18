@@ -7,8 +7,6 @@ import { getImage, GatsbyImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 
 const RelatedCases = ({ cases, images }) => {
-  console.log(cases, images);
-
   return (
     <div className="px-10 w-full mt-[20px]">
       <Swiper

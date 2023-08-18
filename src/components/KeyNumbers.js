@@ -1,9 +1,6 @@
 import React from "react";
-import BvButton from "./Button";
-import IconsLibrary from "./bvIcons";
 
 const KeyNumbers = ({ title, numberItems, titleHighlight }) => {
-  console.log(title, titleHighlight, numberItems);
   return (
     <div
       className={`col-span-8 pt-[50px] bg-[#313131] rounded-3xl flex flex-col`}

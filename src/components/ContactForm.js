@@ -246,7 +246,6 @@ const ContactForm = ({ types, bgColor, typesTitle }) => {
                                           style={{
                                             position: "absolute",
                                             bottom: "-28px",
-                                            color: "black",
                                             fontWeight: "600",
                                             fontSize: "20px",
                                             fontFamily: "Forma DJR",

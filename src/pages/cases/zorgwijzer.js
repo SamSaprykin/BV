@@ -200,8 +200,6 @@ const CaseData = {
 };
 
 export default function CasePage({ location }) {
-  console.log(location);
-
   const ZorgImages = useStaticQuery(graphql`
     query ZorgImages {
       one: file(relativePath: { eq: "images/case/1.png" }) {

@@ -134,7 +134,6 @@ const Mardquee = ({ name }) => {
 };
 
 export default function Cases({ location }) {
-  console.log(location);
   const CasesImages = useStaticQuery(graphql`
     query CasesImages {
       BekijkProject: file(
