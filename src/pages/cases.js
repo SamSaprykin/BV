@@ -7,9 +7,9 @@ import IconsLibrary from "../components/bvIcons";
 
 function getWidthByType(variant) {
   const classMappings = {
-    "full-empty-space": `w-[calc(66.6%-20px)]`,
-    half: `w-[calc(50%-10px)]`,
-    full: `w-full`,
+    "full-empty-space": `xl:w-[calc(66.6%-20px)]`,
+    half: `md:w-[calc(50%-10px)]`,
+    full: `md:w-full`,
   };
 
   const className = classMappings[variant];
@@ -194,26 +194,28 @@ export default function Cases({ location }) {
   return (
     <Layout location={location} includeFooter={CasesData.IncludeFooter}>
       <div className="bg-primary flex items-center flex-col">
-        <div className="h-40 p-16 text-lg">{CasesData.PageName}</div>
+        <div className="h-30 md:h-40 p-8 md:p-16 text-lg flex items-center">
+          {CasesData.PageName}
+        </div>
       </div>
 
-      <div className="flex flex-wrap px-10 gap-[20px] w-full">
-        <div className="bg-black p-[50px] w-1/3 flex rounded-3xl">
+      <div className="flex flex-wrap px-[10px] md:px-10 gap-[20px] w-full">
+        <div className="bg-black p-[30px] md:p-[50px] xl:w-1/3 flex rounded-3xl">
           <h1
-            className={`text-${CasesData.HeroText.textOne.color} text-[42px] leading-none tracking-normal`}
+            className={`text-${CasesData.HeroText.textOne.color} text-[28px] md:text-[42px] leading-[32px] md:leading-none tracking-normal`}
           >
             <span
-              className={`text-${CasesData.HeroText.textOne.color} text-[42px] leading-none after:content-[''] after:mx-2 after:bg-[url("/cases-text-image.png")] after:w-[100px] after:h-[38px] after:inline-block after:align-middle`}
+              className={`text-${CasesData.HeroText.textOne.color} text-[28px] md:text-[42px] leading-[32px] md:leading-none after:content-[''] after:mx-2 after:bg-[url("/cases-text-image.png")] after:w-[100px] after:h-[38px] after:inline-block after:align-middle`}
             >
               {CasesData.HeroText.textOne.content}
             </span>
             <span
-              className={`text-${CasesData.HeroText.textTwo.color} text-[42px] leading-none`}
+              className={`text-${CasesData.HeroText.textTwo.color} text-[28px] md:text-[42px] leading-[32px] md:leading-none`}
             >
               {CasesData.HeroText.textTwo.content}
             </span>
             <span
-              className={`text-[${CasesData.HeroText.textThree.color}] text-[42px] leading-none`}
+              className={`text-[${CasesData.HeroText.textThree.color}] text-[28px] md:text-[42px] leading-[32px] md:leading-none`}
             >
               {CasesData.HeroText.textThree.content}
             </span>
@@ -236,20 +238,20 @@ export default function Cases({ location }) {
                 <GatsbyImage
                   image={image}
                   alt={useCase.caseName}
-                  className="rounded-3xl w-full object-cover"
+                  className="rounded-3xl w-full object-cover min-h-[360px]"
                 />
                 {useCase.nameType === "general" ? (
-                  <h2 className="left-[30px] bottom-[112px] absolute text-white text-3xl">
+                  <h2 className="left-[20px] md:left-[30px] bottom-[92px] md:bottom-[112px] absolute text-white text-[28px] md:text-3xl">
                     {useCase.caseName}
                   </h2>
                 ) : (
                   <Mardquee name={useCase.caseName} />
                 )}
 
-                <span className="right-[30px] top-[30px] absolute px-[18px] py-[9px] text-sm text-white border-[1px] rounded-[100px] border-white">
+                <span className="right-[20px] md:right-[30px] top-[20px] md:top-[30px] absolute px-[18px] py-[4.5px] md:py-[9px] text-[14px] md:text-sm text-white border-[1px] rounded-[100px] border-white">
                   {useCase.year}
                 </span>
-                <div className="absolute top-[30px] left-[30px] flex gap-[6px]">
+                <div className="absolute top-[20px] md:top-[30px] left-[20px] md:left-[30px] flex gap-[6px]">
                   {useCase.categories.map((category) => {
                     return (
                       <span
@@ -262,7 +264,7 @@ export default function Cases({ location }) {
                   })}
                 </div>
 
-                <div className="h-[80px] flex px-[30px] items-center">
+                <div className="h-[80px] flex px-[20px] md:px-[30px] items-center">
                   <h3> {useCase.description}</h3>
                 </div>
               </Link>

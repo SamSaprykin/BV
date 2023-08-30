@@ -51,7 +51,6 @@ module.exports = {
         "checked-input": "var(--checked-input)",
       },
       gridTemplateColumns: {
-        // Complex site-specific column configuration
         footer: "minmax(auto, 1fr) minmax(auto, 1fr) 220px",
         caseLayout: "2fr 1fr",
         serviceLayout: "1fr 2fr",

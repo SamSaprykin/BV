@@ -35,6 +35,7 @@ const IconsLibrary = ({ type, className, fill, fillChild, style }) => {
       width="80"
       height="80"
       viewBox="0 0 80 80"
+      className={className}
     >
       <g>
         <g>

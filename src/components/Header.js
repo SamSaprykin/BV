@@ -104,11 +104,12 @@ const Header = ({ location }) => {
   console.log(currentTheme);
 
   return (
-    <div className="fixed top-0 flex justify-between items-center px-10 pt-10 w-full z-10">
+    <div className="fixed top-0 flex justify-between items-center px-[20px] md:px-10 pt-[20px] md:pt-10 w-full z-10">
       <Link to="/">
         <IconsLibrary
           fill={location.pathname === "/" ? "white" : "#40e640"}
           type="main-logo"
+          className="w-[60px] h-[60px] md:w-[80px] md:h-[80px]"
         />
       </Link>
       <div className="flex gap-2 items-center">

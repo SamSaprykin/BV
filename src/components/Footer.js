@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { ThemeToggler } from "gatsby-plugin-dark-mode";
-import { Link } from "gatsby";
+
 import IconsLibrary from "./bvIcons";
-import { isBrowser } from "../utils";
+
 import BvButton from "./Button";
 
 const footerData = {
@@ -89,8 +88,8 @@ const Footer = () => {
     }
   );
   return (
-    <div className="grid grid-cols-footer px-10 pt-[20px] bg-primary gap-x-[20px] mb-[50px]">
-      <div className="flex flex-col px-[50px] pt-[42px] pb-[31px] bg-[#40e643] h-[400px] rounded-[25px] items-start">
+    <div className="grid grid-cols-6 lg:grid-cols-footer px-[10px] md:px-10 pt-[20px] bg-primary gap-x-[20px] mb-[20px] md:mb-[50px]">
+      <div className="col-span-6 lg:col-auto flex flex-col px-[30px] md:px-[50px] pt-[32px] md:pt-[42px] pb-[21px] md:pb-[31px] bg-[#40e643] h-[400px] rounded-[25px] items-start">
         <h2 className="text-white bg-black rounded-[100px] overflow-hidden inline-block text-3xl max-w-[244px] whitespace-nowrap leading-9 mb-[43px]">
           {footerData.title}
         </h2>
@@ -120,8 +119,8 @@ const Footer = () => {
           <span className="text-[14px] text-black">{footerData.years}</span>
         </div>
       </div>
-      <div className="flex flex-col px-[50px] py-[42px] bg-[#a5a5a5] rounded-[25px] items-start justify-between">
-        <div className="grid grid-cols-3 gap-[4px]">
+      <div className="mt-[10px] lg:mt-0 col-span-6 md:col-span-4 lg:col-auto flex flex-col px-[30px] md:px-[50px] py-[30px] md:py-[42px] bg-[#a5a5a5] rounded-[25px] items-start justify-between">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-[4px] mb-[40px] md:mb-0">
           {footerData.social.socialItems.map((social) => {
             return (
               <BvButton
@@ -136,7 +135,7 @@ const Footer = () => {
             );
           })}
         </div>
-        <div className="flex justify-between w-full">
+        <div className="flex justify-between w-full gap-[16px] flex-col md:flex-row">
           <div className="text-[14px] text-black max-w-[155px]">
             {footerData.social.address}
           </div>
@@ -150,15 +149,15 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col flex flex-col gap-y-[20px]">
-        <div className="bg-[#313131] rounded-[25px] h-[100px] w-full flex items-center justify-center">
+      <div className="mt-[10px] lg:mt-0 col-span-6 md:col-span-2 lg:col-auto	flex flex-row md:flex-col gap-[10px] md:gap-[20px]">
+        <div className="bg-[#313131] rounded-[25px] h-full md:h-[100px] w-1/2 md:w-full flex items-center justify-center">
           <IconsLibrary type="moon" />
         </div>
-        <div className="bg-[#313131] rounded-[25px] grow p-[20px] flex flex-col items-center justify-between">
-          <h2 className="text-[62px] text-white mt-[20px]">
+        <div className="bg-[#313131] rounded-[25px] grow p-[15px] flex flex-col items-center justify-between">
+          <h2 className="text-[42px] md:text-[62px] text-white mt-[16px] md:mt-[20px]">
             {footerData.currentProjects.amount}
           </h2>
-          <div className="mt-[20px] relative h-[60px] w-full text-center">
+          <div className="mt-[17px] md:mt-[20px] relative h-[60px] w-full text-center">
             {footerData.currentProjects.projects.map((project, index) => {
               return (
                 <div
