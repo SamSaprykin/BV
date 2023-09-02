@@ -74,7 +74,7 @@ const CaseData = {
     {
       type: "case-logo",
       iconName: "zorgwijzerLogo",
-      className: "row-span-2 col-span-2",
+      className: "row-span-2 col-span-2 p-8 md:p-0",
       bgColor: "#0051ff",
     },
     {
@@ -312,9 +312,11 @@ export default function CasePage({ location }) {
   return (
     <Layout location={location} includeFooter={CaseData.IncludeFooter}>
       <div className="bg-primary flex items-center flex-col">
-        <div className="h-40 p-16 text-lg">{CaseData.PageName}</div>
-        <div className="grid grid-cols-caseLayout w-full px-10 gap-x-[20px]">
-          <div className="grid grid-cols-4 gap-[20px]">
+        <div className="h-30 md:h-40 p-8 md:p-16 text-lg flex items-center">
+          {CaseData.PageName}
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-caseLayout w-full px-[10px] md:px-10 gap-x-[20px]">
+          <div className="grid grid-cols-4 gap-[10px] md:gap-[20px] order-2 lg:order-1">
             {CaseData.bodyComponents.map((component) => {
               switch (component.type) {
                 case "image":
@@ -349,7 +351,7 @@ export default function CasePage({ location }) {
               }
             })}
           </div>
-          <div className="grid grid-rows-11">
+          <div className="order-1 lg:order-2 grid lg:grid-rows-11 mb-4">
             <AboutCase data={CaseData.AboutCase} />
           </div>
         </div>

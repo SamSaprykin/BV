@@ -214,24 +214,26 @@ export default function AboutUs({ location }) {
   return (
     <Layout location={location} includeFooter={AboutData.IncludeFooter}>
       <div className="bg-primary flex items-center flex-col">
-        <div className="h-40 p-16 text-lg">{AboutData.PageName}</div>
-        <div className="grid grid-cols-12 gap-4 px-10 w-full">
-          <div className="bg-black p-[50px] col-span-4 flex rounded-3xl">
+        <div className="h-30 md:h-40 p-8 md:p-16 text-lg flex items-center">
+          {AboutData.PageName}
+        </div>
+        <div className="grid grid-cols-12 gap-4 px-[10px] md:px-10 w-full">
+          <div className="bg-black p-[30px] md:p-[50px] col-span-12 lg:col-span-4 flex rounded-3xl">
             <h1
-              className={`text-${AboutData.HeroText.textOne.color} text-[42px] leading-none tracking-normal`}
+              className={`text-${AboutData.HeroText.textOne.color} text-[28px] md:text-[42px] leading-[32px] md:leading-none tracking-normal`}
             >
               <span
-                className={`text-${AboutData.HeroText.textOne.color} text-[42px] leading-none after:content-[''] after:mx-2 after:bg-[url("/about-text.png")] after:w-[100px] after:h-[38px] after:inline-block after:align-middle`}
+                className={`text-${AboutData.HeroText.textOne.color} text-[28px] md:text-[42px] leading-[32px] md:leading-none after:content-[''] after:mx-2 after:bg-[url("/about-text.png")] after:w-[74px] after:h-[26px] md:after:w-[100px] md:after:h-[38px] after:bg-cover after:inline-block after:align-middle`}
               >
                 {AboutData.HeroText.textOne.content}
               </span>
               <span
-                className={`text-${AboutData.HeroText.textTwo.color} text-[42px] leading-none`}
+                className={`text-${AboutData.HeroText.textTwo.color} text-[28px] md:text-[42px] leading-[32px] md:leading-none`}
               >
                 {AboutData.HeroText.textTwo.content}
               </span>
               <span
-                className={`text-[${AboutData.HeroText.textThree.color}] text-[42px] leading-none`}
+                className={`text-[${AboutData.HeroText.textThree.color}] text-[28px] md:text-[42px] leading-[32px] md:leading-none`}
               >
                 {AboutData.HeroText.textThree.content}
               </span>

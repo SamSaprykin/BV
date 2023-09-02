@@ -47,7 +47,7 @@ const AboutCase = ({ data }) => {
     }
   );
   return (
-    <div className="row-span-2 bg-black rounded-3xl px-[50px] py-[30px] relative">
+    <div className="row-span-2 bg-black rounded-[20px] md:rounded-2xl px-[30px] xl:px-[50px] py-[30px] relative">
       <div className="flex justify-between w-full text-[#a5a5a5] mb-[50px] text-[14px]">
         <span className="">{data.caseName}</span>
         <span>{data.year}</span>
@@ -64,7 +64,7 @@ const AboutCase = ({ data }) => {
           );
         })}
       </div>
-      <div className="mt-[30px] relative h-[200px]">
+      <div className="mt-[30px] relative h-[240px] md:h-[160px] lg:h-[260px] xl:h-[200px]">
         {data.testimonials.map((testimonial, index) => {
           return (
             <div
@@ -116,7 +116,7 @@ const AboutCase = ({ data }) => {
         <IconsLibrary type="arrow-square" />
       </div>
       {data.team && (
-        <div className="absolute bottom-[50px] left-[50px] flex flex-col">
+        <div className="lg:absolute mt-[50px] md:mt-[100px] lg:mt-0 lg:bottom-[50px] left-[50px] flex flex-col">
           <h5 className="text-[#a5a5a5] text=[14px] mb-[23px]">
             Brainpower behind this project
           </h5>

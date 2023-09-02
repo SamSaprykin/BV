@@ -11,10 +11,10 @@ const KeyValues = ({ valuesItems, images }) => {
               return (
                 <div
                   key={item.text}
-                  className="col-span-3 bg-[#ebebeb] row-span-2 p-[50px] rounded-3xl flex flex-col justify-between h-[300px]"
+                  className="col-span-12 lg:col-span-3 bg-[#ebebeb] row-span-2 p-[30px] md:p-[50px] rounded-3xl flex flex-col justify-between h-[200px] md:h-[300px]"
                 >
                   <div className="flex items-between">
-                    <h5 className="text-[20px] 2xl:text-[24px] leading-[1.2] text-black">
+                    <h5 className="text-[18px] md:text-[20px] 2xl:text-[24px] leading-[1.2] text-black">
                       {item.text}
                     </h5>
                   </div>
@@ -30,14 +30,14 @@ const KeyValues = ({ valuesItems, images }) => {
               );
             case "highlight":
               return (
-                <div className="row-span-3 col-span-6 bg-mainGreen p-[50px] text-[32px] 2xl:text-[42px] leading-none tracking-normal rounded-3xl h-full font-medium">
+                <div className="row-span-3 col-span-12 lg:col-span-6 bg-mainGreen p-[30px] md:p-[50px] text-[32px] 2xl:text-[42px] leading-none tracking-normal rounded-3xl h-full font-medium">
                   {item.text}
                 </div>
               );
             case "image":
               const gImage = getImage(images[item.imageName]);
               return (
-                <div className="row-span-3 col-span-6 rounded-3xl overflow-hidden">
+                <div className="row-span-3 col-span-12 lg:col-span-6 rounded-3xl overflow-hidden">
                   <GatsbyImage image={gImage} className="w-full h-full" />
                 </div>
               );

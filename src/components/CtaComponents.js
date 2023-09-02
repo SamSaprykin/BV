@@ -3,9 +3,9 @@ import BvButton from "./Button";
 
 const CtaComponent = ({ text, ctaText, ctaRoute }) => {
   return (
-    <div className="px-10 w-full mt-[20px]">
-      <div className="w-full bg-mainGreen rounded-3xl p-[50px] h-[400px] flex flex-col justify-between items-start">
-        <p className="w-full max-w-[1000px] text-[42px] font-medium leading-none">
+    <div className="px-[10px] md:px-10 w-full mt-[20px]">
+      <div className="w-full bg-mainGreen rounded-3xl p-[30px] md:p-[50px] h-[300px] md:h-[400px] flex flex-col justify-between items-start">
+        <p className="w-full max-w-[1000px] text-[28px] md:text-[42px] font-medium leading-none">
           {text}
         </p>
         <BvButton

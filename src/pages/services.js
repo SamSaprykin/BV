@@ -42,17 +42,17 @@ const ServiceData = {
         "Prototyping & Testing",
         "Growth Strategy",
       ],
-      className: "row-span-4 col-span-7",
+      className: "row-span-4 col-span-12 md:col-span-7",
     },
     {
       type: "image",
       imgName: "one",
-      className: "row-span-2 col-span-5",
+      className: "row-span-2 col-span-6 md:col-span-5",
     },
     {
       type: "image",
       imgName: "five",
-      className: "row-span-2 col-span-5",
+      className: "row-span-2 col-span-6 md:col-span-5",
     },
     {
       type: "service",
@@ -67,17 +67,17 @@ const ServiceData = {
         "Prototyping & Testing",
         "Growth Strategy",
       ],
-      className: "row-span-4 col-span-7",
+      className: "row-span-4 col-span-12 md:col-span-7",
     },
     {
       type: "image",
       imgName: "three",
-      className: "row-span-2 col-span-5",
+      className: "row-span-2 col-span-6 md:col-span-5",
     },
     {
       type: "image",
       imgName: "four",
-      className: "row-span-2 col-span-5",
+      className: "row-span-2 col-span-6 md:col-span-5",
     },
   ],
 };
@@ -123,24 +123,26 @@ export default function Services({ location }) {
   return (
     <Layout location={location} includeFooter={ServiceData.IncludeFooter}>
       <div className="bg-primary flex items-center flex-col">
-        <div className="h-40 p-16 text-lg">{ServiceData.PageName}</div>
-        <div className="grid grid-cols-serviceLayout w-full px-10 gap-x-[20px]">
-          <div className="bg-black p-[50px] flex rounded-3xl max-h-[1280px]">
+        <div className="h-30 md:h-40 p-8 md:p-16 text-lg flex items-center">
+          {ServiceData.PageName}
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-serviceLayout w-full px-[10px] md:px-10 gap-x-[20px]">
+          <div className="bg-black p-[30px] md:p-[50px] flex rounded-3xl max-h-[1280px] mb-[10px] md:mb-[20px]">
             <h1
-              className={`text-${ServiceData.HeroText.textOne.color} text-[42px] leading-none tracking-normal`}
+              className={`text-${ServiceData.HeroText.textOne.color} text-[28px] md:text-[42px] leading-none tracking-normal`}
             >
               <span
-                className={`text-${ServiceData.HeroText.textOne.color} text-[42px] leading-none after:content-[''] after:mx-2 after:bg-[url("/service-hero.png")] after:w-[100px] after:h-[38px] after:inline-block after:align-middle`}
+                className={`text-${ServiceData.HeroText.textOne.color} text-[28px] md:text-[42px] leading-none after:content-[''] after:mx-2 after:bg-[url("/service-hero.png")] after:w-[74px] after:h-[26px] md:after:w-[100px] md:after:h-[38px] after:bg-cover after:inline-block after:align-middle`}
               >
                 {ServiceData.HeroText.textOne.content}
               </span>
               <span
-                className={`text-${ServiceData.HeroText.textTwo.color} text-[42px] leading-none`}
+                className={`text-${ServiceData.HeroText.textTwo.color} text-[28px] md:text-[42px] leading-none`}
               >
                 {ServiceData.HeroText.textTwo.content}
               </span>
               <span
-                className={`text-[${ServiceData.HeroText.textThree.color}] text-[42px] leading-none`}
+                className={`text-[${ServiceData.HeroText.textThree.color}] text-[28px] md:text-[42px] leading-none`}
               >
                 {ServiceData.HeroText.textThree.content}
               </span>

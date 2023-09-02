@@ -47,11 +47,11 @@ const FaqComponent = ({
   };
   return (
     <>
-      <div className="col-span-4 rounded-3xl overflow-hidden">
+      <div className="col-span-12 md:col-span-5 lg:col-span-4 rounded-3xl overflow-hidden">
         <GatsbyImage image={gImage} className="w-full h-full" />
       </div>
-      <div className="col-span-8 p-[50px] bg-gray-testimonial rounded-3xl flex flex-col justify-between">
-        <h3 className="mb-[100px] w-full max-w-[680px] text-[42px] leading-none font-medium">
+      <div className="col-span-12 md:col-span-7 lg:col-span-8 p-[30px] lg:p-[50px] bg-gray-testimonial rounded-3xl flex flex-col justify-between">
+        <h3 className="mb-[30px] md:mb-[100px] w-full max-w-[680px] text-[28px] md:text-[42px] leading-none font-medium">
           {faqTitle} <span className="text-[#737373]">{faqTitleHighlight}</span>
         </h3>
         <div className="flex flex-col gap-y-[5px]">
@@ -60,11 +60,15 @@ const FaqComponent = ({
               return (
                 <div
                   key={item.faqQuestion}
-                  className="bg-gray-faq rounded-[12px] px-[30px] py-[20px] text-[18px] leading-normal flex items-center justify-between hover:cursor-pointer"
+                  className="bg-gray-faq rounded-[12px] px-[20px] md:px-[30px] py-[16px] md:py-[20px] text-[16px] md:text-[18px] leading-normal flex items-center justify-between hover:cursor-pointer"
                   onClick={() => handleMenuToggle(`id-${index}`)}
                 >
-                  <h4>{item.faqQuestion} </h4>
-                  <IconsLibrary type="expand-faq" fill="ar(--textNormal)" />
+                  <h4 className="mr-4">{item.faqQuestion} </h4>
+                  <IconsLibrary
+                    type="expand-faq"
+                    fill="var(--textNormal)"
+                    className="w-[16px] h-[16px] min-w-[16px]"
+                  />
                 </div>
               );
             })}

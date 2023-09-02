@@ -248,10 +248,10 @@ export default function Cases({ location }) {
                   <Mardquee name={useCase.caseName} />
                 )}
 
-                <span className="right-[20px] md:right-[30px] top-[20px] md:top-[30px] absolute px-[18px] py-[4.5px] md:py-[9px] text-[14px] md:text-sm text-white border-[1px] rounded-[100px] border-white">
+                <span className="right-[10px] md:right-[15px] lg:right-[30px] top-[20px] md:top-[30px] absolute px-[18px] py-[4.5px] lg:py-[9px] text-[14px] md:text-sm text-white border-[1px] rounded-[100px] border-white">
                   {useCase.year}
                 </span>
-                <div className="absolute top-[20px] md:top-[30px] left-[20px] md:left-[30px] flex gap-[6px]">
+                <div className="absolute top-[20px] md:top-[30px] left-[10px] md:left-[15px] lg:left-[30px] flex gap-[6px]">
                   {useCase.categories.map((category) => {
                     return (
                       <span
