@@ -79,22 +79,7 @@ const Menu = ({ menuData, menuOpen }) => {
         })}
       </div>
 
-      <ThemeToggler>
-        {({ theme, toggleTheme }) => (
-          <label>
-            <input
-              type="checkbox"
-              onChange={(e) => toggleTheme(e.target.checked ? "dark" : "light")}
-              checked={theme === "dark"}
-            />
-            {theme === "dark" ? (
-              <IconsLibrary type="moon" />
-            ) : (
-              <IconsLibrary type="moon" />
-            )}
-          </label>
-        )}
-      </ThemeToggler>
+      <IconsLibrary type="moon" />
       <div className="flex justify-between mt-[30px]">
         <span className="text-[#a5a5a5] text-[14px]">{result}</span>
         <Clock
@@ -129,7 +114,24 @@ const Header = ({ location }) => {
             className="w-[60px] h-[60px] md:w-[80px] md:h-[80px]"
           />
         </Link>
-
+        <ThemeToggler>
+          {({ theme, toggleTheme }) => (
+            <label>
+              <input
+                type="checkbox"
+                onChange={(e) =>
+                  toggleTheme(e.target.checked ? "dark" : "light")
+                }
+                checked={theme === "dark"}
+              />
+              {theme === "dark" ? (
+                <IconsLibrary type="moon" />
+              ) : (
+                <IconsLibrary type="moon" />
+              )}
+            </label>
+          )}
+        </ThemeToggler>
         <div className="flex gap-2 items-center">
           <div className="relative  hidden lg:block">
             <button onClick={() => setMenuOpen(!menuOpen)} className="">
