@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="absolute top-0 left-0 w-full h-full">
         <StaticImage
           src="../assets/images/hero-home.png"
-          className="hidden lg:block w-screen h-screen"
+          className="!hidden lg:!block w-screen h-screen"
           alt="hero"
           placeholder="dominantColor"
           quality={100}

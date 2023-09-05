@@ -33,11 +33,11 @@ const ContactForm = ({ types, bgColor, typesTitle }) => {
   return (
     <div
       style={{ backgroundColor: bgColor }}
-      className={`rounded-3xl overflow-hidden flex col-span-8`}
+      className={`rounded-3xl overflow-hidden flex col-span-12 lg:col-span-8`}
     >
       <div className="w-full">
-        <div className="bg-gray-testimonial w-full flex items-center gap-x-2 px-[50px] py-[30px] text-[30px] font-medium rounded-[25px]">
-          <span className="mr-2">{typesTitle} </span>
+        <div className="bg-gray-testimonial w-full flex flex-col md:flex-row md:items-center  gap-2 px-[30px] md:px-[50px] py-[30px] text-[30px] font-medium rounded-[25px]">
+          <span className="mr-2 text-[22px] md:text-[32px]">{typesTitle} </span>
           {types.map((type) => {
             return (
               <div
@@ -47,7 +47,7 @@ const ContactForm = ({ types, bgColor, typesTitle }) => {
                   currentType === type.typeName
                     ? "bg-checked-input text-textChecked  border-[2px] border-borderInputItemChecked"
                     : "bg-gray-testimonial border-[2px] border-input"
-                }  rounded-[24px] flex items-center py-[12px] px-[20px] font-normal text-[16px] gap-x-2 cursor-pointer`}
+                } w-full md:w-auto rounded-[24px] flex md:items-center py-[12px] px-[20px] font-normal text-[16px] gap-x-2 cursor-pointer`}
               >
                 <input
                   type="radio"
@@ -68,20 +68,20 @@ const ContactForm = ({ types, bgColor, typesTitle }) => {
                     return (
                       <div
                         key={inputRow.rowNumber}
-                        className="bg-gray-testimonial w-full flex justify-between items-center gap-x-2 px-[50px] py-[30px] text-[30px] font-medium rounded-[25px] mt-[2px]"
+                        className="bg-gray-testimonial w-full flex justify-between flex-col md:flex-row md:items-center gap-x-2 px-[30px] md:px-[50px] py-[30px] text-[30px] font-medium rounded-[25px] mt-[2px]"
                       >
                         {inputRow.inputs.map((input) => {
                           switch (input.type) {
                             case "text":
                               return (
                                 <div className="w-full">
-                                  <div className="flex gap-x-2 items-center">
-                                    <h3 className="text-[32px] mr-2">
+                                  <div className="flex flex-col md:flex-row gap-2 md:items-center">
+                                    <h3 className="text-[22px] md:text-[32px] mr-2">
                                       {input.label}
                                     </h3>
                                     <input
                                       type={input.type}
-                                      className="bg-gray-testimonial inline-block w-1/2 focus:outline-none"
+                                      className="bg-gray-testimonial inline-block w-1/2 focus:outline-none text-[22px] md:text-[32px]"
                                       placeholder={input.placeholder}
                                     />
                                   </div>
@@ -90,12 +90,12 @@ const ContactForm = ({ types, bgColor, typesTitle }) => {
                             case "textarea":
                               return (
                                 <div className={`w-full ${input.height}`}>
-                                  <h3 className="text-[32px] mb-0 leading-snug">
+                                  <h3 className="text-[22px] md:text-[32px] mb-0 leading-snug">
                                     {input.label}
                                   </h3>
                                   <textarea
                                     rows={input.rows}
-                                    className="w-full bg-gray-testimonial focus:outline-none "
+                                    className="w-full bg-gray-testimonial focus:outline-none text-[22px] md:text-[32px]"
                                     placeholder={input.placeholder}
                                     maxLength={input.rows}
                                   />
@@ -104,7 +104,7 @@ const ContactForm = ({ types, bgColor, typesTitle }) => {
                             case "options-check":
                               return (
                                 <div className={`w-full ${input.height}`}>
-                                  <h3 className="text-[32px] mb-[22px] leading-snug">
+                                  <h3 className="text-[22px] md:text-[32px] mb-[22px] leading-snug">
                                     {input.label}
                                   </h3>
                                   <div className="flex flex-wrap gap-[8px]">
@@ -131,7 +131,7 @@ const ContactForm = ({ types, bgColor, typesTitle }) => {
                                             checked={selectedValues.includes(
                                               optionNorm
                                             )}
-                                            className="text-center block absolute w-full h-full left-0 opacity-0 cursor-pointer"
+                                            className="text-center block absolute w-full h-full left-0 opacity-0 cursor-pointer text-[22px] md:text-[32px]"
                                             placeholder="option"
                                             onChange={handleCheckboxChange}
                                           ></input>
@@ -154,13 +154,13 @@ const ContactForm = ({ types, bgColor, typesTitle }) => {
                             case "email":
                               return (
                                 <div className="w-full">
-                                  <div className="flex gap-x-2 items-center">
-                                    <h3 className="text-[32px] mr-2">
+                                  <div className="flex gap-2 flex-col md:flex-row md:items-center">
+                                    <h3 className="text-[22px] md:text-[32px] mr-2">
                                       {input.label}
                                     </h3>
                                     <input
                                       type={input.type}
-                                      className="bg-gray-testimonial inline-block focus:outline-none w-1/3"
+                                      className="bg-gray-testimonial inline-block focus:outline-none w-full md:w-1/3 text-[22px] md:text-[32px]"
                                       placeholder={input.placeholder}
                                     />
                                   </div>
@@ -174,7 +174,7 @@ const ContactForm = ({ types, bgColor, typesTitle }) => {
                                   variant="primary"
                                   iconType={input.iconType}
                                   iconClassName="absolute -top-4 left-[50%]"
-                                  className="text-[16px] w-[188px] text-center rounded-[12px]"
+                                  className="text-[16px] w-[188px] text-center rounded-[12px] mt-4 md:mt-0"
                                 >
                                   {input.label}
                                 </BvButton>
@@ -182,7 +182,7 @@ const ContactForm = ({ types, bgColor, typesTitle }) => {
                             case "range":
                               return (
                                 <div className="w-full">
-                                  <h3 className="text-[32px] mb-[22px] leading-snug">
+                                  <h3 className="text-[22px] md:text-[32px] mb-[22px] leading-snug">
                                     {input.label}
                                   </h3>
                                   <Range
